@@ -9,7 +9,7 @@ import javax.persistence.Table;
 /**
  * @Author xin.hao
  * @create 2021/1/11 11:19
- *
+ * <p>
  * 每个需要 Auditing 的实体 需要继承 AbstractAuditable.
  */
 @Entity

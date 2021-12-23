@@ -5,6 +5,7 @@ import lombok.Data;
 
 /**
  * 条件
+ *
  * @Author xin.hao
  * @create 2021/1/4 13:54
  */
@@ -12,7 +13,7 @@ import lombok.Data;
 public class Cnd {
     private String property;
     private Operator operator;
-    private Object  value;
+    private Object value;
 
     public Cnd(String property, Operator operator, Object value) {
         this.operator = operator;

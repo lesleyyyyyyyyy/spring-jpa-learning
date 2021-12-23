@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @Author xin.hao
  * @create 2020/11/4 15:34
  */
-public interface UserRepository extends JpaRepository<User,Integer>, JpaSpecificationExecutor<User>{
+public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
 }

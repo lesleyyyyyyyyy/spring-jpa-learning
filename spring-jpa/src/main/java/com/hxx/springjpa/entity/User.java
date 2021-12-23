@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //自增主键
     private Integer id;
 
-    @Column(name = "name",length = 50)
+    @Column(name = "name", length = 50)
     private String name;
 
     @Column

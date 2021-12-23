@@ -12,6 +12,7 @@ public class Order {
 
     private String property;
     private Sort.Direction direction = Sort.Direction.ASC;
+
     /**
      * 构造方法
      *
@@ -22,6 +23,7 @@ public class Order {
         this.property = property;
         this.direction = direction;
     }
+
     /**
      * 返回递增排序
      *
@@ -31,6 +33,7 @@ public class Order {
     public static Order asc(String property) {
         return new Order(property, Sort.Direction.ASC);
     }
+
     /**
      * 返回递减排序
      *

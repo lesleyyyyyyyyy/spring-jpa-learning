@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * @Author xin.hao
  * @create 2021/1/8 11:09
- *
+ * <p>
  * 引入 @MappedSuperclass 注解，
  * 我们将 @Id、@CreatedBy、 @CreatedDate、 @LastModifiedBy、 @LastModifiedDate 抽象到一个公用的基类里面，
  * 方便公用和形成每个表的字段约束。可以将其放到我们公司的框架代码上，对表设计形成统一的强约束。

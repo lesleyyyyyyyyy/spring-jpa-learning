@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 public class UserRepositoryImpl implements UserRepositoryCustom {
 
     @PersistenceContext //获得
-    EntityManager entityManager;
+            EntityManager entityManager;
 
     @Override
     public User findById(Integer id) {

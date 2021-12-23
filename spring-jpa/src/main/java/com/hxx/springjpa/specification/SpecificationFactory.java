@@ -13,16 +13,18 @@ import java.util.Date;
 public class SpecificationFactory {
     /**
      * 模糊查询
+     *
      * @param attribute 表中实体字段
-     * @param value 查询条件
+     * @param value     查询条件
      * @return
      */
     public static Specification containsLike(String attribute, String value) {
-        return (root, query, cb) -> cb.like(root.get(attribute), "%"+value+"%");
+        return (root, query, cb) -> cb.like(root.get(attribute), "%" + value + "%");
     }
 
     /**
-     *  某字段的值等于value
+     * 某字段的值等于value
+     *
      * @param attribute 字段名
      * @param value
      * @return
@@ -33,6 +35,7 @@ public class SpecificationFactory {
 
     /**
      * 获取对应属性的值 所在区间
+     *
      * @param attribute 字段名
      * @param min
      * @param max
@@ -52,7 +55,8 @@ public class SpecificationFactory {
 
     /**
      * 通过属性名和集合实现in查询
-     * @param attribute 属性名（字段名）
+     *
+     * @param attribute  属性名（字段名）
      * @param collection 集合
      * @return
      */
@@ -62,6 +66,7 @@ public class SpecificationFactory {
 
     /**
      * 通过属性名构建 大于等于value 的查询条件
+     *
      * @param attribute 属性名（字段名）
      * @param value
      * @return

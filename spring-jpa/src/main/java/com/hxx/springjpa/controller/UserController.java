@@ -30,19 +30,20 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/user/{id}")
-    public Optional<User> getUser(@PathVariable Integer id){
+    public Optional<User> getUser(@PathVariable Integer id) {
         Optional<User> user = userRepository.findById(id);
         return user;
     }
+
     @GetMapping("/user")
-    public User insertUser(User user){
+    public User insertUser(User user) {
 //        User save = userRepository.save(user);
 //        return save;
         return userRepository.save(user);
     }
 
     @GetMapping("/add")
-    public void addUser(@RequestParam String name, @RequestParam String email){
+    public void addUser(@RequestParam String name, @RequestParam String email) {
         User user = new User();
         user.setName(name);
         user.setEmail(email);
@@ -52,44 +53,45 @@ public class UserController {
 
     @GetMapping("/all")
     @ResponseBody
-    public List<User> getAll(){
+    public List<User> getAll() {
         return userRepository.findAll();
     }
 
     @GetMapping("/info")
     @ResponseBody
-    public User findOne(@RequestParam Integer id){
+    public User findOne(@RequestParam Integer id) {
         return userRepository.getOne(id);
     }
 
     @GetMapping("/delete")
-    public void deleteUser(@RequestParam Integer id){
+    public void deleteUser(@RequestParam Integer id) {
         userRepository.deleteById(id);
     }
 
     /**
      * 排序、分页
+     *
      * @return
      */
     @GetMapping("/page")
     @ResponseBody
-    public Page<User> getAllUserByPage(){
-        Sort sort = Sort.by(Sort.Direction.ASC,"name");
-        Pageable pageable = PageRequest.of(1,20,sort);
+    public Page<User> getAllUserByPage() {
+        Sort sort = Sort.by(Sort.Direction.ASC, "name");
+        Pageable pageable = PageRequest.of(1, 20, sort);
         return userRepository.findAll(pageable);
     }
 
     @GetMapping("/sort")
     @ResponseBody
-    public List<User> getAllUsersWithSort(){
-        Sort sort = Sort.by(Sort.Direction.ASC,"name");
+    public List<User> getAllUsersWithSort() {
+        Sort sort = Sort.by(Sort.Direction.ASC, "name");
         return userRepository.findAll(sort);
 
     }
 
     @GetMapping("/getUserWithMatcher")
     @ResponseBody
-    public List<User> getuser(String name){
+    public List<User> getuser(String name) {
         User user = new User();
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith())

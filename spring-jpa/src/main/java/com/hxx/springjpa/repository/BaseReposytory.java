@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * 自定义基类
+ *
  * @Author xin.hao
  * @create 2020/12/31 15:24
  */
